@@ -1,4 +1,4 @@
-import { useState, FormEvent, MouseEvent } from "react";
+import { useState, FormEvent, MouseEvent, ChangeEvent } from "react";
 import { v4 as uuid } from "uuid";
 
 interface ITask {
@@ -20,8 +20,6 @@ export default function Task() {
 
     let description = target.description.value;
 
-    console.log(description);
-
     setTaskList([
       ...taskList,
       {
@@ -39,6 +37,18 @@ export default function Task() {
     setTaskList(taskList.filter((task: ITask) => task.id != taskId));
   };
 
+  const handleCompleted = (event: ChangeEvent<HTMLInputElement>) => {
+    const taskId = event.target.id;
+    taskList.map((task: ITask) => {
+      if (task.id === taskId && task.completed === false) {
+        task.completed = true;
+      } else if (task.id === taskId && task.completed === true) {
+        task.completed = false;
+      }
+    });
+    setTaskList([...taskList]);
+  };
+
   return (
     <>
       <h4>task.list</h4>
@@ -51,6 +61,14 @@ export default function Task() {
             ) : (
               <p>Complete: Yes</p>
             )}
+            <label htmlFor={task.id}>Done</label>
+            <input
+              type="checkbox"
+              name="completed"
+              id={task.id}
+              onChange={handleCompleted}
+              value={"completed"}
+            />
             <button id={task.id} onClick={handleDelete}>
               Delete
             </button>
