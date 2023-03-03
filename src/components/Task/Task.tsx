@@ -1,4 +1,4 @@
-import { useState, FormEvent } from "react";
+import { useState, FormEvent, MouseEvent } from "react";
 import { v4 as uuid } from "uuid";
 
 interface ITask {
@@ -34,6 +34,11 @@ export default function Task() {
     target.description.value = "";
   };
 
+  const handleDelete = (event: MouseEvent<HTMLButtonElement>) => {
+    const taskId = event.currentTarget.id;
+    setTaskList(taskList.filter((task: ITask) => task.id != taskId));
+  };
+
   return (
     <>
       <h4>task.list</h4>
@@ -46,6 +51,9 @@ export default function Task() {
             ) : (
               <p>Complete: Yes</p>
             )}
+            <button id={task.id} onClick={handleDelete}>
+              Delete
+            </button>
           </li>
         ))}
       </ul>
