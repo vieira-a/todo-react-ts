@@ -1,29 +1,14 @@
 import { useState, FormEvent } from "react";
+import { v4 as uuid } from "uuid";
 
 interface ITask {
-  id: number;
+  id: string;
   description: string;
   completed: boolean;
 }
 
 export default function Task() {
-  const [taskList, setTaskList] = useState<ITask[]>([
-    {
-      id: 1,
-      description: "Do anything",
-      completed: false,
-    },
-    {
-      id: 2,
-      description: "Do nothing",
-      completed: false,
-    },
-    {
-      id: 3,
-      description: "Everything is done",
-      completed: true,
-    },
-  ]);
+  const [taskList, setTaskList] = useState<ITask[]>([]);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -40,7 +25,7 @@ export default function Task() {
     setTaskList([
       ...taskList,
       {
-        id: Math.random(),
+        id: uuid(),
         description,
         completed: false,
       },
