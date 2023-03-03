@@ -10,4 +10,7 @@ A form with grid to view the todo list and manage tasks.
 
 ### Prototype
 
-- [ ] Create an array with data
+- [x] Create an array with data (test)
+- [x] Create function to insert
+- [x] Create function to delete
+- [x] Create function to update
