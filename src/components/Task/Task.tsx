@@ -50,44 +50,51 @@ export default function Task() {
   };
 
   return (
-    <>
-      <h4>task.list</h4>
-      <ul>
-        {taskList.map((task) => (
-          <li key={task.id}>
-            <p>Task: {task.description}</p>
-            {task.completed === false ? (
-              <p>Complete: No</p>
-            ) : (
-              <p>Complete: Yes</p>
-            )}
-            <label htmlFor={task.id}>Done</label>
-            <input
-              type="checkbox"
-              name="completed"
-              id={task.id}
-              onChange={handleCompleted}
-              value={"completed"}
+    <div className="max-w-screen-sm mx-auto">
+      <header className="py-4">
+        <h2 className="text-2xl font-semibold">task.list</h2>
+      </header>
+      <div>
+        <ul className="mx-6">
+          {taskList.map((task) => (
+            <li key={task.id} className="flex gap-2 items-center justify-between">
+              <p className="text-lg"># {task.description}</p>
+              {/* {task.completed === false ? (
+                <p>Done: No</p>
+              ) : (
+                <p>Done: Yes</p>
+              )} */}
+              <div className="flex gap-2">
+                <label htmlFor={task.id} className="relative py-2 px-3 my-4 bg-purple-600 rounded text-sm cursor-pointer hover:bg-purple-700 transition" >Done</label>
+                <input className="hidden"
+                  type="checkbox"
+                  name="completed"
+                  id={task.id}
+                  onChange={handleCompleted}
+                  value={"completed"}
+                />
+                <button id={task.id} onClick={handleDelete} className="py-2 px-3 my-4 bg-purple-600 rounded text-sm cursor-pointer hover:bg-purple-700 transition">
+                  Delete
+                </button>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="py-2 my-6 mx-auto">
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="task" className="flex flex-col gap-6">
+            {" "}
+            Add a new Task
+            <input className="w-4/5 p-3 rounded mx-auto text-gray-800"
+              type="text"
+              placeholder="What is your next task"
+              name="description"
             />
-            <button id={task.id} onClick={handleDelete}>
-              Delete
-            </button>
-          </li>
-        ))}
-      </ul>
-      <h4>new.task</h4>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="task">
-          {" "}
-          Add a new Task
-          <input
-            type="text"
-            placeholder="What is your next task"
-            name="description"
-          />
-        </label>
-        <input type="submit" value="Save" />
-      </form>
-    </>
+          </label>
+          <input type="submit" value="Save" className="py-3 px-16 my-6 bg-purple-600 rounded text-lg cursor-pointer hover:bg-purple-700 transition" />
+        </form>
+      </div>
+    </div>
   );
 }

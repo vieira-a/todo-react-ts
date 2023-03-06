@@ -5,8 +5,10 @@ import './styles/global.css';
 
 function App() {
   return (
-    <div className="w-screen h-screen bg-gray-900 flex-col items-center justify-center text-gray-200">
-      <h1>todo.app</h1>
+    <div className="w-screen h-screen bg-gray-900 flex-col items-center justify-center text-gray-200 text-center">
+      <header className="py-8">
+        <h1 className="text-5xl text-purple-600 font-bold">todo.app</h1>
+      </header>
       <Task />
     </div>
   );
