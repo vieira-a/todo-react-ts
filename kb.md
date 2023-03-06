@@ -15,3 +15,22 @@ A form with grid to view the todo list and manage tasks.
 - [x] Create function to insert
 - [x] Create function to delete
 - [x] Create function to update
+
+### Refactoring
+
+- [x] Interface in separate file
+- [ ] Saparate components: Taks, Form
+- [ ] Create context to handle Task informations
+
+**Component Form**
+
+_Facilities to get input values:_
+
+- [ ] Create states to form inputs
+- [ ] Refactor onSubmit form function
+- [ ] Create function to handle input changes
+
+**Component Task**
+
+- [ ] Change component name (differ for the Interface name)
+- [ ] This component only shows Task information

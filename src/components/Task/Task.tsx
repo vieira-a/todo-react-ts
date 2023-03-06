@@ -1,11 +1,6 @@
+import { ITask } from "../../interfaces/Task";
 import { useState, FormEvent, MouseEvent, ChangeEvent } from "react";
 import { v4 as uuid } from "uuid";
-
-interface ITask {
-  id: string;
-  description: string;
-  completed: boolean;
-}
 
 export default function Task() {
   const [taskList, setTaskList] = useState<ITask[]>([]);
@@ -107,8 +102,7 @@ export default function Task() {
       </div>
       <div className="py-2 my-6 mx-auto">
         <form onSubmit={handleSubmit}>
-          <label htmlFor="task" className="flex flex-col gap-6">
-            {" "}
+          <label htmlFor="description" className="flex flex-col gap-6">
             Add a new Task
             <input
               className="w-4/5 p-3 rounded mx-auto text-gray-800"
