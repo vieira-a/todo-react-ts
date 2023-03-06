@@ -58,14 +58,16 @@ export default function Task() {
         <ul className="mx-6">
           {taskList.map((task) => (
             <li key={task.id} className="flex gap-2 items-center justify-between">
-              <p className="text-lg"># {task.description}</p>
+              {task.completed === false ? 
+              (<p className="text-lg "># {task.description}</p>) 
+              :(<p className="text-lg text-gray-500"># {task.description}</p>)}
               {/* {task.completed === false ? (
                 <p>Done: No</p>
               ) : (
                 <p>Done: Yes</p>
               )} */}
               <div className="flex gap-2">
-                <label htmlFor={task.id} className="relative py-2 px-3 my-4 bg-purple-600 rounded text-sm cursor-pointer hover:bg-purple-700 transition" >Done</label>
+              <label htmlFor={task.id} className="relative py-2 px-3 my-4 bg-purple-600 rounded text-sm cursor-pointer hover:bg-purple-700 transition">Done</label>
                 <input className="hidden"
                   type="checkbox"
                   name="completed"
