@@ -67,7 +67,7 @@ export default function Task() {
                 <p>Done: Yes</p>
               )} */}
               <div className="flex gap-2">
-              <label htmlFor={task.id} className="relative py-2 px-3 my-4 bg-purple-600 rounded text-sm cursor-pointer hover:bg-purple-700 transition">Done</label>
+              <label htmlFor={task.id} className="relative py-2 px-3 my-4 bg-purple-800 rounded text-sm cursor-pointer hover:bg-purple-600 transition">Done</label>
                 <input className="hidden"
                   type="checkbox"
                   name="completed"
@@ -75,7 +75,7 @@ export default function Task() {
                   onChange={handleCompleted}
                   value={"completed"}
                 />
-                <button id={task.id} onClick={handleDelete} className="py-2 px-3 my-4 bg-purple-600 rounded text-sm cursor-pointer hover:bg-purple-700 transition">
+                <button id={task.id} onClick={handleDelete} className="py-2 px-3 my-4 bg-purple-800 rounded text-sm cursor-pointer hover:bg-purple-600 transition">
                   Delete
                 </button>
               </div>
@@ -94,7 +94,7 @@ export default function Task() {
               name="description"
             />
           </label>
-          <input type="submit" value="Save" className="py-3 px-16 my-6 bg-purple-600 rounded text-lg cursor-pointer hover:bg-purple-700 transition" />
+          <input type="submit" value="Save" className="py-3 px-16 my-6 bg-purple-800 rounded text-lg cursor-pointer hover:bg-purple-600 transition" />
         </form>
       </div>
     </div>
