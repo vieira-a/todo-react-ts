@@ -57,25 +57,47 @@ export default function Task() {
       <div>
         <ul className="mx-6">
           {taskList.map((task) => (
-            <li key={task.id} className="flex gap-2 items-center justify-between">
-              {task.completed === false ? 
-              (<p className="text-lg "># {task.description}</p>) 
-              :(<p className="text-lg text-gray-500"># {task.description}</p>)}
+            <li
+              key={task.id}
+              className="flex gap-2 items-center justify-between"
+            >
+              {task.completed === false ? (
+                <p className="text-lg "># {task.description}</p>
+              ) : (
+                <p className="text-lg text-gray-500"># {task.description}</p>
+              )}
               {/* {task.completed === false ? (
                 <p>Done: No</p>
               ) : (
                 <p>Done: Yes</p>
               )} */}
               <div className="flex gap-2">
-              <label htmlFor={task.id} className="relative py-2 px-3 my-4 bg-purple-800 rounded text-sm cursor-pointer hover:bg-purple-600 transition">Done</label>
-                <input className="hidden"
+                <label
+                  htmlFor={task.id}
+                  className="relative py-2 px-3 my-4 bg-purple-800 rounded text-sm cursor-pointer hover:bg-purple-600 transition"
+                >
+                  Done
+                </label>
+                <input
+                  className="hidden"
                   type="checkbox"
                   name="completed"
                   id={task.id}
                   onChange={handleCompleted}
                   value={"completed"}
                 />
-                <button id={task.id} onClick={handleDelete} className="py-2 px-3 my-4 bg-purple-800 rounded text-sm cursor-pointer hover:bg-purple-600 transition">
+                <button
+                  id={task.id}
+                  onClick={handleDelete}
+                  className="py-2 px-3 my-4 bg-purple-800 rounded text-sm cursor-pointer hover:bg-purple-600 transition"
+                >
+                  Edit
+                </button>
+                <button
+                  id={task.id}
+                  onClick={handleDelete}
+                  className="py-2 px-3 my-4 bg-purple-800 rounded text-sm cursor-pointer hover:bg-purple-600 transition"
+                >
                   Delete
                 </button>
               </div>
@@ -88,13 +110,18 @@ export default function Task() {
           <label htmlFor="task" className="flex flex-col gap-6">
             {" "}
             Add a new Task
-            <input className="w-4/5 p-3 rounded mx-auto text-gray-800"
+            <input
+              className="w-4/5 p-3 rounded mx-auto text-gray-800"
               type="text"
               placeholder="What is your next task"
               name="description"
             />
           </label>
-          <input type="submit" value="Save" className="py-3 px-16 my-6 bg-purple-800 rounded text-lg cursor-pointer hover:bg-purple-600 transition" />
+          <input
+            type="submit"
+            value="Save"
+            className="py-3 px-16 my-6 bg-purple-800 rounded text-lg cursor-pointer hover:bg-purple-600 transition"
+          />
         </form>
       </div>
     </div>

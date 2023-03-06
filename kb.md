@@ -4,9 +4,10 @@ A form with grid to view the todo list and manage tasks.
 
 **Requisites**
 
-- User can insert new task
-- User can delete any task
-- User can set task as completed
+- [x] User can insert new task
+- [x] User can delete any task
+- [x] User can set task as completed
+- [ ] User can edit task
 
 ### Prototype
 
