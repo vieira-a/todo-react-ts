@@ -2,7 +2,7 @@ import { ITask } from "../../interfaces/Task";
 import { useState, FormEvent, MouseEvent, ChangeEvent } from "react";
 import { v4 as uuid } from "uuid";
 
-export default function Task() {
+export default function TaskList() {
   const [taskList, setTaskList] = useState<ITask[]>([]);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {

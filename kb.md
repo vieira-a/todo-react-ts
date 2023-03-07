@@ -32,5 +32,5 @@ _Facilities to get input values:_
 
 **Component Task**
 
-- [ ] Change component name (differ for the Interface name)
+- [x] Change component name (differ for the Interface name)
 - [ ] This component only shows Task information
